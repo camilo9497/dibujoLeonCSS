@@ -649,10 +649,11 @@
 .container-tail {
   transform-origin: bottom center;
   animation-name: moveTail;
-  animation-duration: 2s;
+  animation-duration: 5s;
+  animation-timing-function: linear;
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
-  animation-delay: 1s;
+  /* animation-delay: 1s; */
   width: 50px;
   height: 76px;
   position: absolute;
@@ -728,11 +729,32 @@ body.animate .container-tail {
   }
 }
 @keyframes moveTail {
-  from {
-    transform: rotate(-6deg);
+  0% {
+    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(6deg);
+  20% {
+    transform: rotate(-12deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-12deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(-12deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+  97% {
+    transform: rotate(18deg);
+  }
+  100% {
+    transform: rotate(-18deg);
   }
 }
 @keyframes moveBase {
