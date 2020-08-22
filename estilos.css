@@ -34,7 +34,7 @@
 }
 .container-base {
   position: absolute;
-  top: 65%;
+  top: 61%;
   left: calc(50% - var(--widthBase) / 2);
 }
 
@@ -72,9 +72,13 @@
   position: absolute;
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 200%;
   height: 100%;
   bottom: -35px;
+  will-change: contents;
+  /* transition: transform 1s ease;
+  transform: translateX(100%); */
+  animation: moveBase 2s linear 0s infinite normal;
 }
 .barra {
   width: 13px;
@@ -104,6 +108,10 @@
   height: 180px;
   transform-origin: bottom center;
   transform: rotate(0deg);
+  animation-name: moveHead;
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
 }
 .container-base-face {
   display: flex;
@@ -638,11 +646,32 @@
   transform: rotate(-17deg);
   border-radius: 0 55% 11px 0;
 }
+.container-tail {
+  transform-origin: bottom center;
+  animation-name: moveTail;
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  width: 50px;
+  height: 76px;
+  position: absolute;
+  top: 5px;
+  right: -22px;
+  z-index: -5;
+}
+body.animate .container-tail {
+  animation-name: moveTail;
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
 .curve-left {
   position: absolute;
   z-index: -4;
-  top: 6px;
-  left: 65px;
+  top: 0;
+  left: -7px;
   width: 77px;
   height: 77px;
   border-radius: 50%;
@@ -654,8 +683,7 @@
   width: 40px;
   height: 40px;
   position: absolute;
-  /* background: red; */
-  left: 120px;
+  left: 49px;
   top: 10px;
 }
 .punta-tail {
@@ -692,4 +720,26 @@
   top: 12px;
 }
 @keyframes moveHead {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+@keyframes moveTail {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+@keyframes moveBase {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-25%);
+  }
 }
