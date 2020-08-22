@@ -10,10 +10,13 @@
   --heightFace: 120px;
   --widthNose: 20px;
   --widthBaseFace: 155px;
+  --widthTronco: 95px;
 
+  --colorBody: #f5b515;
   --colorFace: #fdcf81;
   --colorHair: #924b39;
   --colorSombra: #cda267;
+  --colorHand: #fbd278;
 }
 .container {
   display: flex;
@@ -449,4 +452,137 @@
   overflow: hidden;
   bottom: 114px;
   width: 164px;
+}
+
+/* cuerpo */
+.container-body-lion {
+  position: absolute;
+  top: 59%;
+  left: calc(50% - var(--widthTronco) / 2);
+  z-index: -2;
+}
+.container-tronco {
+  width: var(--widthTronco);
+  height: 125px;
+  background: var(--colorBody);
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0 100%);
+}
+.arm-left {
+  width: 20px;
+  height: 128px;
+  background: var(--colorBody);
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  transform: rotate(10deg);
+  border-left: 1px solid #efad18;
+}
+.container-hand {
+  position: absolute;
+  left: -10px;
+  bottom: -5px;
+  width: 53px;
+  height: 30px;
+  background: var(--colorHand);
+  border-radius: 3px 11px 2px 3px;
+}
+.container-dedos {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -5px;
+}
+.finger {
+  width: 29px;
+  height: 34px;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  background: var(--colorHand);
+  transform: rotate(5deg);
+  top: -1px;
+  border-left: 2px solid #e0a225;
+}
+
+.dedo:nth-child(1) {
+  width: 20px;
+  height: 30px;
+  background: var(--colorHand);
+  border-radius: 20px 0 20px 20px;
+  border-bottom: 3px solid var(--colorSombra);
+  position: absolute;
+  top: -33px;
+  left: -4px;
+}
+.dedo:nth-child(2) {
+  width: 20px;
+  height: 30px;
+  background: var(--colorHand);
+  border-radius: 20px 0 20px 20px;
+  border-bottom: 3px solid var(--colorSombra);
+  position: absolute;
+  top: -33px;
+  left: 13px;
+}
+.dedo:nth-child(3) {
+  width: 20px;
+  height: 30px;
+  background: var(--colorHand);
+  border-radius: 20px 20px 20px 20px;
+  border-bottom: 3px solid var(--colorSombra);
+  position: absolute;
+  top: -33px;
+  left: 33px;
+}
+.separador-dedo:nth-child(1) {
+  width: 3px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d2a02b;
+  position: absolute;
+  left: 11px;
+  transform: rotate(-9deg);
+  bottom: 0;
+}
+.separador-dedo:nth-child(2) {
+  width: 3px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #d2a02b;
+  position: absolute;
+  left: 32px;
+  transform: rotate(3deg);
+  bottom: 0;
+}
+.sombra-brazo-left {
+  height: 70px;
+  width: 20px;
+  background-color: #e4a20f;
+  position: absolute;
+  left: 25px;
+  top: -70px;
+  clip-path: polygon(70% 0%, 100% 10%, 85% 20%, 75% 30%, 70% 100%, 0% 100%);
+}
+.pierna-atras-left {
+  position: absolute;
+  left: -18px;
+  width: 30px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: var(--colorBody);
+  top: 21px;
+  z-index: -3;
+}
+.pata-atras-left {
+  position: absolute;
+  width: 35px;
+  height: 27px;
+  border-radius: 55% 0 0 11px;
+  background-color: var(--colorBody);
+  transform: rotate(17deg);
+  top: 89px;
+  left: -38px;
+  z-index: -3;
+  border-bottom: 2px solid #e4a20f;
 }
