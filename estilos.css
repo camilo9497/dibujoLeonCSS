@@ -17,6 +17,7 @@
   --colorHair: #924b39;
   --colorSombra: #cda267;
   --colorHand: #fbd278;
+  --colorTail: #e49f16;
 }
 .container {
   display: flex;
@@ -89,13 +90,20 @@
 }
 
 .container-lion {
+  display: flex;
+  justify-content: center;
   z-index: 15;
   position: absolute;
   left: calc(50% - var(--withLion) / 2);
-  /* background: green; */
   width: var(--withLion);
   height: 280px;
   top: 15%;
+}
+.container-head-lion {
+  width: 233px;
+  height: 180px;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
 }
 .container-base-face {
   display: flex;
@@ -486,6 +494,7 @@
   height: 30px;
   background: var(--colorHand);
   border-radius: 3px 11px 2px 3px;
+  z-index: 10;
 }
 .container-dedos {
   display: flex;
@@ -585,4 +594,102 @@
   left: -38px;
   z-index: -3;
   border-bottom: 2px solid #e4a20f;
+}
+.arm-right {
+  width: 20px;
+  background: var(--colorBody);
+  border-radius: 50%;
+  position: absolute;
+  left: 77px;
+  transform: rotate(-10deg);
+  border-left: 0;
+  border-right: 1px solid #efad18;
+  height: 100px;
+  top: 25px;
+}
+.hand-right {
+  left: 60px;
+}
+.sombra-brazo-right {
+  z-index: -2;
+  width: 8px;
+  height: 50px;
+  left: 0;
+  top: -48px;
+  clip-path: polygon(10% 6%, 50% 0%, 100% 5%, 100% 100%, 20% 100%, 63% 33%);
+}
+.finger-right {
+  border-left: none;
+}
+.dedo-right {
+  border-right: 2px solid #e0a225;
+}
+.dedo-right-uno {
+  left: 11px;
+}
+.dedo-right-dos {
+  left: 32px;
+}
+.atras-right {
+  left: 78px;
+}
+.atras-right-pata {
+  left: 92px;
+  transform: rotate(-17deg);
+  border-radius: 0 55% 11px 0;
+}
+.curve-left {
+  position: absolute;
+  z-index: -4;
+  top: 6px;
+  left: 65px;
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  background: none;
+  border-bottom: 10px solid var(--colorTail);
+  transform: rotate(-35deg);
+}
+.container-punta-tail {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  /* background: red; */
+  left: 120px;
+  top: 10px;
+}
+.punta-tail {
+  width: 30px;
+  height: 30px;
+  background: var(--colorHair);
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  bottom: -8px;
+}
+.hair-tail {
+  left: 132px;
+  height: 35px;
+  width: 40px;
+  bottom: 75px;
+}
+.right-cinco {
+  transform: rotate(-76deg);
+  left: -131px;
+  bottom: -105px;
+}
+.circulo-tail {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #ffe4dd;
+  position: absolute;
+  left: 3px;
+  top: 10px;
+}
+.tail-dos {
+  left: 20px;
+  top: 12px;
+}
+@keyframes moveHead {
 }
